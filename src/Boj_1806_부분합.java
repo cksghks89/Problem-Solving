@@ -20,8 +20,8 @@ public class Boj_1806_부분합 {
 
         int p1 = 0;
         int p2 = 0;
-
         int sum = 0;
+
         PriorityQueue<Integer> pq = new PriorityQueue<>();
 
         while(true){

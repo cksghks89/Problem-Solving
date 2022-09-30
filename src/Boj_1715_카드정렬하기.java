@@ -27,7 +27,6 @@ public class Boj_1715_카드정렬하기 {
             while(pq.size() >= 2){
                 int sum = pq.poll() + pq.poll();
                 total += sum;
-
                 pq.add(sum);
             }
             System.out.println(total);

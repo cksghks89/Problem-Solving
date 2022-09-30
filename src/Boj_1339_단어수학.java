@@ -38,5 +38,6 @@ public class Boj_1339_단어수학 {
             mul--;
         }
         System.out.println(sum);
+
     }
 }
