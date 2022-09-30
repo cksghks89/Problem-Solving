@@ -54,6 +54,5 @@ public class Boj_1644_소수의연속합 {
             }
         }
         System.out.println(cnt);
-
     }
 }
