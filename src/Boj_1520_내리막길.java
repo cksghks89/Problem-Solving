@@ -69,7 +69,6 @@ public class Boj_1520_내리막길 {
                 sum += dp[nx][ny];
             }
         }
-
         return sum;
     }
 
