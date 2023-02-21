@@ -147,7 +147,7 @@ public class Boj_5373_큐빙 {
             clockwise();
         }
 
-        // 윗면이 앞쪽으로 오도록 큐브 자체를 회전하는 메서드
+        // 윗면을 시계방향으로 돌리는 메서드
         public void upClockwise() {
             char[] F_temp = {F[0][0], F[0][1], F[0][2]};
             F[0][0] = R[0][0];
@@ -175,6 +175,7 @@ public class Boj_5373_큐빙 {
             U = turnUp;
         }
 
+        // 아래면을 시계방향으로 돌리는 메서드
         public void downClockwise() {
             char[] F_temp = {F[2][0], F[2][1], F[2][2]};
             F[2][0] = L[2][0];
@@ -201,39 +202,6 @@ public class Boj_5373_큐빙 {
             }
             D = turnDown;
         }
-
-//        public void upToFrontTurn() {
-//            char[][] F_temp = new char[3][3];
-//            copy(F_temp, F);
-//
-//            copy(F, U);
-//
-//            copyLine(U[2], B[0]);
-//            copyLine(U[1], B[1]);
-//            copyLine(U[0], B[2]);
-//
-//            copyLine(B[0], D[2]);
-//            copyLine(B[1], D[1]);
-//            copyLine(B[2], D[0]);
-//
-//            copy(D, F_temp);
-//
-//            char[][] turnRight = new char[3][3];
-//            for (int i = 0; i < 3; i++) {
-//                for (int j = 0; j < 3; j++) {
-//                    turnRight[i][j] = R[j][2 - i];
-//                }
-//            }
-//            R = turnRight;
-//
-//            char[][] turnLeft = new char[3][3];
-//            for (int i = 0; i < 3; i++) {
-//                for (int j = 0; j < 3; j++) {
-//                    turnLeft[i][j] = L[2 - j][i];
-//                }
-//            }
-//            L = turnLeft;
-//        }
 
         // 왼쪽 면이 앞면으로 오도록 큐브 자체를 회전하는 메서드
         public void leftToFrontTurn() {
@@ -267,12 +235,6 @@ public class Boj_5373_큐빙 {
                 for (int j = 0; j < 3; j++) {
                     desc[i][j] = src[i][j];
                 }
-            }
-        }
-
-        private void copyLine(char[] desc, char[] src) {
-            for (int i = 0; i < 3; i++) {
-                desc[i] = src[i];
             }
         }
     }
