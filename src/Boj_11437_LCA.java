@@ -1,6 +1,6 @@
 /*
     Boj 11437. LCA
-    level. gold 4
+    level. gold 3
     solved by 송찬환
  */
 import java.io.*;
