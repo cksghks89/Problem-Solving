@@ -40,7 +40,7 @@ public class SWEA_1249_보급로 {
             Arrays.fill(costMap[i], Integer.MAX_VALUE);
         }
 
-        PriorityQueue<int[]> queue = new PriorityQueue<>((x, y) -> x[2] - y[2]);
+        PriorityQueue<int[]> queue = new PriorityQueue<>(101, (x, y) -> x[2] - y[2]);
         queue.offer(new int[]{0, 0, 0});
         costMap[0][0] = 0;
 
