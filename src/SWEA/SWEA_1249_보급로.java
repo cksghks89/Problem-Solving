@@ -23,13 +23,13 @@ public class SWEA_1249_보급로 {
             map = new int[N][N];
 
             for (int i = 0; i < N; i++) {
-                char[] line = br.readLine().toCharArray();
+                String line = br.readLine();
                 for (int j = 0; j < N; j++) {
-                    map[i][j] = line[j] - '0';
+                    map[i][j] = line.charAt(j) - '0';
                 }
             }
 
-            sb.append("#"+tc+" ").append(priorityBfs()).append("\n");
+            sb.append('#').append(tc).append(' ').append(priorityBfs()).append('\n');
         }
         System.out.print(sb.toString());
     }
@@ -47,33 +47,21 @@ public class SWEA_1249_보급로 {
         while (!queue.isEmpty()) {
             int[] cur = queue.poll();
 
-            int x = cur[0];
-            int y = cur[1];
-            int cost = cur[2];
-
-            if (x == N - 1 && y == N - 1) {
-                return cost;
-            }
-
-            if (costMap[x][y] != cost) {
-                continue;
+            if (cur[0] == N - 1 && cur[1] == N - 1) {
+                return cur[2];
             }
 
             for (int i = 0; i < 4; i++) {
-                int nx = x + dx[i];
-                int ny = y + dy[i];
-
-                if (isInRange(nx, ny) && cost + map[nx][ny] < costMap[nx][ny]) {
-                    costMap[nx][ny] = cost + map[nx][ny];
+                int nx = cur[0] + dx[i];
+                int ny = cur[1] + dy[i];
+                if(!(0 <= nx && nx < N && 0 <= ny && ny < N)) continue;
+                if (cur[2] + map[nx][ny] < costMap[nx][ny]) {
+                    costMap[nx][ny] = cur[2] + map[nx][ny];
                     queue.offer(new int[]{nx, ny, costMap[nx][ny]});
                 }
             }
         }
 
         return -1;
-    }
-
-    static boolean isInRange(int x, int y) {
-        return (0 <= x && x < N) && (0 <= y && y < N);
     }
 }
