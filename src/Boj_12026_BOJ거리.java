@@ -1,3 +1,8 @@
+/*
+    Boj 12026. BOJ 거리
+    level. silver 1
+    solved by 송찬환
+ */
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
