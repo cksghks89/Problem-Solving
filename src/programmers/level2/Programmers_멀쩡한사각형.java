@@ -43,6 +43,7 @@ public class Programmers_멀쩡한사각형 {
 
             return all - repeat * num;
         }
+
         // 최대공약수
         public int gcd(int small, int big) {
             if (big % small == 0) return small;
