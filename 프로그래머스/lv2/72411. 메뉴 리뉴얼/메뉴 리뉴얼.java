@@ -39,7 +39,11 @@ class Solution {
         }
 
         Collections.sort(answer);
-        return answer.toArray(new String[0]);
+        String[] ans = new String[answer.size()];
+        for (int i = 0; i < answer.size(); i++) {
+            ans[i] = answer.get(i);
+        }
+        return ans;
     }
 
     void comb(int n, int cnt, int start, char[] order, String menu) {
