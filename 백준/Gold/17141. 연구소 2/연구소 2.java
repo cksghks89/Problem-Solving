@@ -8,7 +8,9 @@ public class Main {
     static int[][] map;
     static int[][] out;
     static boolean[][] visited;
-    static List<int[]> twoList;
+    static int[][] twoList;
+    static int twoCnt;
+
     static int[] dx = {0, 1, 0, -1};
     static int[] dy = {1, 0, -1, 0};
     static int allCnt;
@@ -22,16 +24,19 @@ public class Main {
         M = Integer.parseInt(st.nextToken());
         map = new int[N][N];
         out = new int[M][];
-        twoList = new ArrayList<>();
+        twoList = new int[10][2];
         result = Integer.MAX_VALUE;
 
         int wallCnt = 0;
+        twoCnt = 0;
         for (int i = 0; i < N; i++) {
             st = new StringTokenizer(br.readLine());
             for (int j = 0; j < N; j++) {
                 map[i][j] = Integer.parseInt(st.nextToken());
-                if (map[i][j] == 2) twoList.add(new int[]{i, j});
-                if (map[i][j] == 1) wallCnt++;
+                if (map[i][j] == 2) {
+                    twoList[twoCnt][0] = i;
+                    twoList[twoCnt++][1] = j;
+                } else if (map[i][j] == 1) wallCnt++;
             }
         }
         allCnt = N * N - wallCnt;
@@ -46,8 +51,8 @@ public class Main {
             return;
         }
 
-        for (int i = start; i < twoList.size(); i++) {
-            out[cnt] = twoList.get(i);
+        for (int i = start; i < twoCnt; i++) {
+            out[cnt] = twoList[i];
             comb(cnt + 1, i + 1);
         }
     }
@@ -74,7 +79,7 @@ public class Main {
                 int nx = cur[0] + dx[i];
                 int ny = cur[1] + dy[i];
 
-                if (isInRange(nx, ny) && !visited[nx][ny] && map[nx][ny] != 1) {
+                if (0 <= nx && nx < N && 0 <= ny && ny < N && !visited[nx][ny] && map[nx][ny] != 1) {
                     queue.offer(new int[]{nx, ny, cur[2] + 1});
                 }
             }
@@ -85,9 +90,5 @@ public class Main {
         } else {
             return Integer.MAX_VALUE;
         }
-    }
-
-    static boolean isInRange(int x, int y) {
-        return 0 <= x && x < N && 0 <= y && y < N;
     }
 }
