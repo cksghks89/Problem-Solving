@@ -16,18 +16,18 @@ class Solution {
         int retain = 0;
         int union = 0;
 
-        for (String key : str1Map.keySet()) {
-            if (str2Map.containsKey(key)) {
-                retain += Math.min(str1Map.get(key), str2Map.get(key));
-                union += Math.max(str1Map.get(key), str2Map.get(key));
-                str2Map.remove(key);
+        for (Map.Entry<String, Integer> entry : str1Map.entrySet()) {
+            if (str2Map.containsKey(entry.getKey())) {
+                retain += Math.min(entry.getValue(), str2Map.get(entry.getKey()));
+                union += Math.max(entry.getValue(), str2Map.get(entry.getKey()));
+                str2Map.remove(entry.getKey());
             } else {
-                union += str1Map.get(key);
+                union += entry.getValue();
             }
         }
 
-        for (Integer value : str2Map.values()) {
-            union += value;
+        for (Map.Entry<String, Integer> entry : str2Map.entrySet()) {
+            union += entry.getValue();
         }
 
         int answer = 65536;
@@ -44,11 +44,10 @@ class Solution {
 
         for (int i = 0; i < str.length() - 1; i++) {
             String cur = str.substring(i, i + 2);
-            if (pattern.matcher(cur).find()) {
+            if(pattern.matcher(cur).find()){
                 map.put(cur, map.getOrDefault(cur, 0) + 1);
             }
         }
-        
         return map;
     }
 }
