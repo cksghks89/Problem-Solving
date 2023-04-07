@@ -2,7 +2,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-
 class Solution {
     Map<String, Integer> str1Map;
     Map<String, Integer> str2Map;
@@ -17,18 +16,18 @@ class Solution {
         int retain = 0;
         int union = 0;
 
-        for (Map.Entry<String, Integer> entry : str1Map.entrySet()) {
-            if (str2Map.containsKey(entry.getKey())) {
-                retain += Math.min(entry.getValue(), str2Map.get(entry.getKey()));
-                union += Math.max(entry.getValue(), str2Map.get(entry.getKey()));
-                str2Map.remove(entry.getKey());
+        for (String key : str1Map.keySet()) {
+            if (str2Map.containsKey(key)) {
+                retain += Math.min(str1Map.get(key), str2Map.get(key));
+                union += Math.max(str1Map.get(key), str2Map.get(key));
+                str2Map.remove(key);
             } else {
-                union += entry.getValue();
+                union += str1Map.get(key);
             }
         }
 
-        for (Map.Entry<String, Integer> entry : str2Map.entrySet()) {
-            union += entry.getValue();
+        for (Integer value : str2Map.values()) {
+            union += value;
         }
 
         int answer = 65536;
