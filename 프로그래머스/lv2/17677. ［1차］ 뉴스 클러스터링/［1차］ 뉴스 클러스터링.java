@@ -34,7 +34,6 @@ class Solution {
         if (union != 0) {
             answer = (int) (1.0 * retain / union * 65536);
         }
-
         return answer;
     }
 
