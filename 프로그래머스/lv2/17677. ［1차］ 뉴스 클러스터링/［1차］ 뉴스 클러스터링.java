@@ -1,5 +1,7 @@
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Pattern;
+
 
 class Solution {
     Map<String, Integer> str1Map;
@@ -39,10 +41,11 @@ class Solution {
 
     private Map<String, Integer> makeMap(String str) {
         Map<String, Integer> map = new HashMap<>();
+        Pattern pattern = Pattern.compile("^[a-z][a-z]$");
 
         for (int i = 0; i < str.length() - 1; i++) {
             String cur = str.substring(i, i + 2);
-            if (cur.matches("^([a-z])([a-z])$")) {
+            if (pattern.matcher(cur).find()) {
                 map.put(cur, map.getOrDefault(cur, 0) + 1);
             }
         }
