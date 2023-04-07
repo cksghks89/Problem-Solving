@@ -16,8 +16,6 @@ class Solution {
         int union = 0;
 
         for (Map.Entry<String, Integer> entry : str1Map.entrySet()) {
-            if (!entry.getKey().matches("^([a-z])([a-z])$")) continue;
-
             if (str2Map.containsKey(entry.getKey())) {
                 retain += Math.min(entry.getValue(), str2Map.get(entry.getKey()));
                 union += Math.max(entry.getValue(), str2Map.get(entry.getKey()));
@@ -28,7 +26,6 @@ class Solution {
         }
 
         for (Map.Entry<String, Integer> entry : str2Map.entrySet()) {
-            if (!entry.getKey().matches("^([a-z])([a-z])$")) continue;
             union += entry.getValue();
         }
 
@@ -45,7 +42,9 @@ class Solution {
 
         for (int i = 0; i < str.length() - 1; i++) {
             String cur = str.substring(i, i + 2);
-            map.put(cur, map.getOrDefault(cur, 0) + 1);
+            if (cur.matches("^([a-z])([a-z])$")) {
+                map.put(cur, map.getOrDefault(cur, 0) + 1);
+            }
         }
         return map;
     }
