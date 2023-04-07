@@ -48,6 +48,7 @@ class Solution {
                 map.put(cur, map.getOrDefault(cur, 0) + 1);
             }
         }
+        
         return map;
     }
 }
