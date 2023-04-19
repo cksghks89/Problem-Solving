@@ -2,12 +2,13 @@ import java.util.*;
 
 class Solution {
     public int[] solution(String[] genres, int[] plays) {
+        // 장르별 시간 합산
         Map<String, Integer> genreTime = new HashMap<>();
-
         for (int i = 0; i < genres.length; i++) {
             genreTime.put(genres[i], genreTime.getOrDefault(genres[i], 0) + plays[i]);
         }
 
+        // 1, 2, 3 번 조건으로 정렬한 값을 저장하는 TreeSet 자료구조
         TreeSet<Integer> set = new TreeSet<>((o1, o2) -> {
             if (!genres[o1].equals(genres[o2])) {
                 return genreTime.get(genres[o2]) - genreTime.get(genres[o1]);
@@ -17,20 +18,24 @@ class Solution {
                 return o1 - o2;
             }
         });
-        
 
+        // TreeSet 에 고유번호 넣기
         for (int i = 0; i < genres.length; i++) set.add(i);
-        System.out.println(set);
 
-        List<Integer> answer = new ArrayList<>();
+        // 장르별 2개씩만 결과 배열에 담기
+        List<Integer> result = new ArrayList<>();
         Map<String, Integer> cnt = new HashMap<>();
         for (int idx : set) {
             if (!cnt.containsKey(genres[idx]) || cnt.get(genres[idx]) < 2) {
                 cnt.put(genres[idx], cnt.getOrDefault(genres[idx], 0) + 1);
-                answer.add(idx);
+                result.add(idx);
             }
         }
 
-        return answer.stream().mapToInt(Integer::valueOf).toArray();
+        // 출력부
+        int[] answer = new int[result.size()];
+        for (int i = 0; i < answer.length; i++) answer[i] = result.get(i);
+
+        return answer;
     }
 }
