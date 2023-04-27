@@ -15,7 +15,7 @@ class Solution {
         for (int i = 0; i < lineTimes.length; i++) {
             int cnt = 1;
             for (int j = i + 1; j < lineTimes.length; j++) {
-                if (lineTimes[i][1] + 999 >= lineTimes[j][0]) {
+                if (lineTimes[j][0] < lineTimes[i][1] + 1000) {
                     cnt++;
                 }
             }
