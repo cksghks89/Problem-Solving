@@ -1,15 +1,11 @@
-#BOJ 10814 나이순 정렬
+import sys
 
-N = int(input())
+n = int(input())
+arr = []
+for i in range(n):
+    arr.append(input().split())
+    
+arr.sort(key=lambda arr: int(arr[0]))
 
-li = []
-
-for i in range(0, N):
-	a, b = input().split()
-	a = int(a)
-	li.append([a,b])
-
-li.sort(key=lambda x: x[0])
-
-for i in range(0, N):
-	print(li[i][0],li[i][1])
+for i in range(n):
+    sys.stdout.write(arr[i][0] + ' ' + arr[i][1] + '\n')
