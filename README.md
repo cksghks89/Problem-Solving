@@ -26,6 +26,7 @@ https://programmers.co.kr/
 백준 스킬 레벨의 수준은 2023.12.30 Solved.ac 레이팅 사이트기준 **4,248위**에 랭크되어 있으며, 이는 **전체 상위 3.51%** 수준입니다.
 
 <br/>
+<br/>
 
 |삼성전자 SW 역량 테스트 Level B (Pro 등급)|
 |---|
@@ -37,6 +38,7 @@ https://programmers.co.kr/
 **Level B 취득 후기 : https://ch-tech.tistory.com/15**
 
 
+<br/>
 <br/>
 
 |제 3회 우리 FIS 코딩 페스티벌 성인부 특별상|
