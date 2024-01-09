@@ -1,4 +1,4 @@
-# Algorithm
+# Problem Solving
 
 **SWEA (스웨아)**
 <br/>
