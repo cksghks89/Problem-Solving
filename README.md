@@ -23,7 +23,8 @@ https://programmers.co.kr/
 |---|
 | [![Solved.ac 프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=songkey)](https://solved.ac/profile/songkey) |
 
-백준 스킬 레벨의 수준은 2023.12.30 Solved.ac 레이팅 사이트기준 **4,248위**에 랭크되어 있으며, 이는 **전체 상위 3.51%** 수준입니다.
+백준 스킬 레벨의 수준은 2023.12.30 Solved.ac 레이팅 사이트기준 **4,248위**에 랭크되어 있으며,  
+이는 **전체 상위 3.51%** 수준입니다.
 
 <br/>
 <br/>
@@ -45,5 +46,5 @@ https://programmers.co.kr/
 |---|
 |[공모전 링크](https://www.ybmit.com/event/revent/woori_Code/2023/event.jsp)|
 
-우리 FIS 코딩 페스티벌은 **예선 단계**에서 YBM의 코딩전문가 자격시험(COS Pro)을 응시하여 1000점 만점 기준 1000점으로 통과하였으며,  
+**예선 단계**에서 YBM의 코딩전문가 자격시험(COS Pro)을 응시하였고,  
 **본선 대회**를 거쳐 성인부 특별상을 수상하였습니다.
