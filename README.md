@@ -41,7 +41,7 @@ https://programmers.co.kr/
 <br/>
 <br/>
 
-|제 3회 우리 FIS 코딩 페스티벌 성인부 특별상|
+|2023 Woori 코딩 페스티벌 성인부 특별상|
 |---|
 |[공모전 링크](https://www.ybmit.com/event/revent/woori_Code/2023/event.jsp)|
 
