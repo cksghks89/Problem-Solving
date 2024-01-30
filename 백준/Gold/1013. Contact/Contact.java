@@ -11,11 +11,11 @@ public class Main {
 
         StringBuffer sb = new StringBuffer();
 
+        String reg = "^(100+1+|01)+$";
+        Pattern pattern = Pattern.compile(reg);
         for (int i = 0; i < T; i++) {
             String input = br.readLine();
             
-            String reg = "^(100+1+|01)+$";
-            Pattern pattern = Pattern.compile(reg);
             Matcher matcher = pattern.matcher(input);
 
             if (matcher.matches()) {
