@@ -9,16 +9,13 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int T = Integer.parseInt(br.readLine());
 
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
 
         String reg = "^(100+1+|01)+$";
         Pattern pattern = Pattern.compile(reg);
+        
         for (int i = 0; i < T; i++) {
-            String input = br.readLine();
-            
-            Matcher matcher = pattern.matcher(input);
-
-            if (matcher.matches()) {
+            if (pattern.matcher(br.readLine()).matches()) {
                 sb.append("YES").append('\n');
             } else {
                 sb.append("NO").append('\n');
