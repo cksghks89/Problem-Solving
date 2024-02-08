@@ -24,17 +24,19 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         StringBuilder sb = new StringBuilder();
+
+        arr = new int[100000];
+        segmentTree = new Node[100000 * 4];
+
         while (true) {
             StringTokenizer st = new StringTokenizer(br.readLine());
             n = Integer.parseInt(st.nextToken());
             if (n == 0) break;
 
-            arr = new int[n];
             for (int i = 0; i < n; i++) arr[i] = Integer.parseInt(st.nextToken());
 
             answer = 0;
 
-            segmentTree = new Node[n * 4];
             init(0, n - 1, 1);
 
             recur(0, n - 1);
