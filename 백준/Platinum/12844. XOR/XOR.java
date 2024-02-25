@@ -15,9 +15,10 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         N = Integer.parseInt(br.readLine());
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        arr = new int[500_001];
-        for (int i = 0; i < N; i++) arr[i] = Integer.parseInt(st.nextToken());
+        arr = Arrays.stream(br.readLine().split(" ")).mapToInt(Integer::parseInt).toArray();
+//        StringTokenizer st = new StringTokenizer(br.readLine());
+//        arr = new int[500_000];
+//        for (int i = 0; i < N; i++) arr[i] = Integer.parseInt(st.nextToken());
 
         M = Integer.parseInt(br.readLine());
 
@@ -28,7 +29,7 @@ public class Main {
 
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < M; i++) {
-            st = new StringTokenizer(br.readLine());
+            StringTokenizer st = new StringTokenizer(br.readLine());
             int op = Integer.parseInt(st.nextToken());
             int a = Integer.parseInt(st.nextToken());
             int b = Integer.parseInt(st.nextToken());
