@@ -23,8 +23,8 @@ https://programmers.co.kr/
 |---|
 | [![Solved.ac 프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=songkey)](https://solved.ac/profile/songkey) |
 
-백준 스킬 레벨의 수준은 2023.12.30 Solved.ac 레이팅 사이트기준 **4,248위**에 랭크되어 있으며,  
-이는 **전체 상위 3.51%** 수준입니다.
+백준 스킬 레벨의 수준은 2024.03.21 Solved.ac 레이팅 사이트기준 **2,729위**에 랭크되어 있으며,  
+이는 **전체 상위 2.09%** 수준입니다.
 
 <br/>
 <br/>
