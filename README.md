@@ -48,3 +48,13 @@ https://programmers.co.kr/
 
 **예선 단계**에서 YBM의 코딩전문가 자격시험(COS Pro)을 응시하였고,  
 **본선 대회**를 거쳐 성인부 특별상을 수상하였습니다.
+
+
+<br/>
+<br/>
+
+|PCCP Java Lv.5|
+|---|
+| <img width="661" alt="image" src="https://github.com/cksghks89/Problem-Solving/assets/23161060/5e11f1da-511a-40e2-b3a0-feb8b0ee5685"> |
+
+(주)그렙이 주관하는 PCCP 코딩 전문 역량 인증시험 Java 과목에서 MASTER 등급인 Lv.5 자격을 취득하였습니다.
