@@ -76,8 +76,8 @@ public class Main {
         }
 
         int mid = (start + end) / 2;
-        update(start, mid, node, left, right, value);
-        update(mid + 1, end, node, left, right, value);
+        update(start, mid, node * 2, left, right, value);
+        update(mid + 1, end, node * 2 + 1, left, right, value);
         segmentTree[node] = segmentTree[node * 2] + segmentTree[node * 2 + 1];
     }
 
