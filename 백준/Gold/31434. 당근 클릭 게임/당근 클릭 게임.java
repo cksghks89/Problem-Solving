@@ -1,8 +1,6 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayDeque;
-import java.util.Queue;
 import java.util.StringTokenizer;
 
 public class Main {
@@ -24,43 +22,35 @@ public class Main {
             B[i] = Integer.parseInt(st.nextToken());
         }
 
-        int answer = bfs();
+        int[][] dp = new int[K + 1][25001];
+        for (int i = 0; i <= K; i++) {
+            for (int j = 0; j <= 25000; j++) {
+                dp[i][j] = -1;
+            }
+        }
+        dp[0][1] = 0;
 
-        System.out.println(answer);
-    }
-
-    private static int bfs() {
-        Queue<int[]> queue = new ArrayDeque<>();
-        queue.offer(new int[]{0, 1, 0});    // 0: 시간, 1: s, 2: 개수
-
-        boolean[][] visited = new boolean[25000][50000];
-
-        int max = 0;
-        while (!queue.isEmpty()) {
-            int[] cur = queue.poll();
-
-            if (cur[0] == K) {
-                max = Math.max(max, cur[2]);
-                continue;
+        for (int i = 1; i <= K; i++) {
+            for (int j = 1; j <= 25000; j++) {
+                if (dp[i - 1][j] != -1) {
+                    dp[i][j] = dp[i - 1][j] + j;
+                }
             }
 
-            if (cur[2] >= 50000) {
-                queue.offer(new int[]{cur[0] + 1, cur[1], cur[2] + cur[1]});
-                continue;
-            }
-
-            if (visited[cur[1]][cur[2]]) continue;
-            visited[cur[1]][cur[2]] = true;
-
-
-            queue.offer(new int[]{cur[0] + 1, cur[1], cur[2] + cur[1]});
-            for (int i = 0; i < N; i++) {
-                if (cur[2] >= A[i]) {
-                    queue.offer(new int[]{cur[0] + 1, cur[1] + B[i], cur[2] - A[i]});
+            for (int j = 1; j <= 25000; j++) {
+                for (int k = 0; k < N; k++) {
+                    if (dp[i - 1][j] >= A[k] && j + B[k] <= 25000) {
+                        dp[i][j + B[k]] = Math.max(dp[i][j + B[k]], dp[i - 1][j] - A[k]);
+                    }
                 }
             }
         }
 
-        return max;
+        int max = 0;
+        for (int i = 1; i <= 25000; i++) {
+            max = Math.max(max, dp[K][i]);
+        }
+
+        System.out.println(max);
     }
 }
