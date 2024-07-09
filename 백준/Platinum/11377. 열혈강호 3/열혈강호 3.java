@@ -11,8 +11,6 @@ public class Main {
     private static int[] done;
     private static int visitCount;
 
-    private static Set<Integer> doneSet;
-
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
@@ -23,7 +21,6 @@ public class Main {
 
         assign = new int[M + 1];
         done = new int[M + 1];
-        doneSet = new HashSet<>();
         graph = new List[N + 1];
         for (int i = 0; i <= N; i++) graph[i] = new ArrayList<>();
         visitCount = 0;
@@ -60,7 +57,7 @@ public class Main {
     private static boolean bipartiteMatching(int id) {
         for (int i = 0; i < graph[id].size(); i++) {
             int job = graph[id].get(i);
-            if (done[job] == visitCount || doneSet.contains(job)) continue;
+            if (done[job] == visitCount) continue;
             done[job] = visitCount;
 
             if (assign[job] == 0 || bipartiteMatching(assign[job])) {
